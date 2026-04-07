@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alex – Cybersecurity & Linux Freelance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Junior cybersecurity and Linux freelance engineer – Linux, networks, C/C++, Python, Bash. Available in France and worldwide." />
+  <style>
+    :root {
+      --bg: #050814;
+      --bg-alt: #0b1020;
+      --accent: #3cf2b3;
+      --accent-soft: rgba(60, 242, 179, 0.12);
+      --text: #f5f7ff;
+      --muted: #a3acc7;
+      --border: #1b2238;
+      --danger: #ff4b6a;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --radius: 10px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #101633 0, #050814 55%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to right, rgba(5, 8, 20, 0.95), rgba(5, 8, 20, 0.7));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: radial-gradient(circle at 20% 20%, #3cf2b3, #1b9b7a 45%, #050814 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(60, 242, 179, 0.4), 0 0 25px rgba(60, 242, 179, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(5, 8, 20, 0.1), rgba(5, 8, 20, 0.7));
+      mix-blend-mode: soft-light;
+    }
+
+    .logo-mark span {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #050814;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-text span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(60, 242, 179, 0.6);
+      background: radial-gradient(circle at top left, rgba(60, 242, 179, 0.18), rgba(5, 8, 20, 0.9));
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 0 18px rgba(60, 242, 179, 0.35);
+      white-space: nowrap;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 3.5rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(163, 172, 199, 0.35);
+      color: var(--muted);
+      background: rgba(5, 8, 20, 0.9);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), #1b9b7a);
+      color: #050814;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 18px 35px rgba(60, 242, 179, 0.4);
+    }
+
+    .btn-secondary {
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(5, 8, 20, 0.9);
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-note span {
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 1.4rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(60, 242, 179, 0.12), rgba(5, 8, 20, 0.95));
+      border: 1px solid rgba(60, 242, 179, 0.25);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0, rgba(60, 242, 179, 0.12), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(60, 242, 179, 0.08), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-terminal {
+      position: relative;
+      border-radius: 12px;
+      background: #050814;
+      border: 1px solid rgba(163, 172, 199, 0.25);
+      padding: 0.9rem 1rem 1rem;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      color: #e6fdf5;
+      overflow: hidden;
+    }
+
+    .hero-terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ff5f57;
+    }
+
+    .hero-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .hero-dot:nth-child(3) {
+      background: #28c840;
+    }
+
+    .hero-terminal-title {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .hero-terminal-body span.prompt {
+      color: var(--accent);
+    }
+
+    .hero-terminal-body span.comment {
+      color: #6b768f;
+    }
+
+    .hero-terminal-body span.warn {
+      color: var(--danger);
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 1.4rem;
+      bottom: 1.4rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(5, 8, 20, 0.9);
+      border: 1px solid rgba(60, 242, 179, 0.5);
+      font-size: 0.7rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 0 18px rgba(60, 242, 179, 0.35);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(60, 242, 179, 0.8);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 32rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .about-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .about-list li::before {
+      content: "▹";
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    .about-highlight {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+
+    .avatar-card {
+      border-radius: 16px;
+      background: radial-gradient(circle at top, rgba(60, 242, 179, 0.18), rgba(5, 8, 20, 0.95));
+      border: 1px solid rgba(60, 242, 179, 0.35);
+      padding: 1.4rem 1.5rem 1.6rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .avatar-placeholder {
+      width: 96px;
+      height: 96px;
+      border-radius: 999px;
+      border: 2px solid rgba(60, 242, 179, 0.7);
+      background: radial-gradient(circle at 30% 20%, #3cf2b3, #050814 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #050814;
+      margin-bottom: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-placeholder::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(5, 8, 20, 0.1), rgba(5, 8, 20, 0.7));
+      mix-blend-mode: soft-light;
+    }
+
+    .avatar-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .avatar-meta span {
+      color: var(--accent);
+    }
+
+    .avatar-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 1.2rem 1.25rem 1.3rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(60, 242, 179, 0.12), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .service-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(60, 242, 179, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    .service-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .service-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .service-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .service-list li::before {
+      content: "▹";
+      color: var(--accent);
+      margin-right: 0.35rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.2rem 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-label {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .project-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-meta span {
+      color: var(--accent);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(163, 172, 199, 0.35);
+      color: var(--muted);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .testimonial-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.2rem 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 0.6rem;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    .testimonial-author span {
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.5rem 1.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0.6rem 0 1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-list span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .contact-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .contact-pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(163, 172, 199, 0.35);
+      color: var(--muted);
+    }
+
+    .contact-cta {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .contact-cta-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-visual {
+      border-radius: 16px;
+      background: radial-gradient(circle at top, rgba(60, 242, 179, 0.18), rgba(5, 8, 20, 0.95));
+      border: 1px solid rgba(60, 242, 179, 0.35);
+      padding: 1.4rem 1.5rem 1.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-visual h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .contact-visual p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-visual-code {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      background: #050814;
+      border-radius: 10px;
+      border: 1px solid rgba(163, 172, 199, 0.25);
+      padding: 0.7rem 0.8rem;
+      color: #e6fdf5;
+      overflow-x: auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 1.25rem 1.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-inner span {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .section {
+        padding: 2.7rem 1.1rem;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">
+            <span>A</span>
+          </div>
+          <div class="logo-text">
+            <strong>ALEX</strong>
+            <span>Cybersecurity & Linux</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-cta">Available for freelance</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero" id="top">
+        <div>
+          <div class="hero-kicker">Cybersecurity · Linux · Networks</div>
+          <h1 class="hero-title">
+            Freelance <span>Cybersecurity & Linux</span> engineer for modern teams.
+          </h1>
+          <p class="hero-subtitle">
+            I help companies secure their Linux servers, networks, and automation pipelines using
+            <strong>Linux, C/C++, Python, Bash</strong> and a security‑first mindset. Based in France, working with clients worldwide.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Linux hardening</span>
+            <span class="tag">Network security</span>
+            <span class="tag">C/C++ · Python · Bash</span>
+            <span class="tag">Automation & tooling</span>
+          </div>
+          <div class="hero-cta-row">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Hire me for a mission
+            </button>
+            <button class="btn-secondary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+              View technical projects
+            </button>
+            <div class="hero-note">
+              <span>Available</span> for remote missions · France & worldwide
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-terminal">
+            <div class="hero-terminal-header">
+              <div class="hero-dots">
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+              </div>
+              <div class="hero-terminal-title">alex@security-lab: ~</div>
+            </div>
+            <div class="hero-terminal-body">
+              <div><span class="prompt">alex@lab</span>:<span class="comment">~</span>$ whoami</div>
+              <div>alex – freelance cybersecurity & linux engineer</div>
+              <br />
+              <div><span class="prompt">alex@lab</span>:<span class="comment">~</span>$ ./harden_server.sh --ssh --firewall</div>
+              <div>[+] applying ssh best practices…</div>
+              <div>[+] configuring firewall rules…</div>
+              <div><span class="warn">[✓]</span> server hardened successfully.</div>
+              <br />
+              <div><span class="prompt">alex@lab</span>:<span class="comment">~</span>$ python monitor.py --network</div>
+              <div>[+] watching traffic for anomalies…</div>
+              <div>[+] exporting logs for analysis…</div>
+            </div>
+          </div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Linux · Networks · Security</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Who I am</h2>
+        <p class="section-intro">
+          I’m Alex, a junior cybersecurity engineer focused on <strong>Linux systems, networks, and secure tooling</strong>.
+          I work with teams that need someone hands‑on, pragmatic, and able to communicate clearly with both technical and non‑technical people.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>What I do</h3>
+            <p>
+              I help you secure and operate your infrastructure: from Linux server hardening to network diagnostics and automation.
+              My goal is to make your systems <strong>safer, more reliable, and easier to maintain</strong>.
+            </p>
+            <ul class="about-list">
+              <li>Linux administration (Debian, Ubuntu, server setup & hardening)</li>
+              <li>Network analysis (TCP/IP, routing, firewalling, VPN)</li>
+              <li>Secure scripting with Bash & Python</li>
+              <li>Systems tooling in C/C++ (performance & security focus)</li>
+              <li>Monitoring, logging, and incident triage</li>
+              <li>Clear documentation and knowledge transfer</li>
+            </ul>
+            <div class="about-highlight">
+              I’m based in France and open to remote missions in Europe and worldwide.
+            </div>
+          </div>
+
+          <div class="avatar-card">
+            <div class="avatar-placeholder">A</div>
+            <div class="avatar-meta">
+              <span>Alex</span> · Cybersecurity & Linux · Freelance
+            </div>
+            <p class="avatar-note">
+              I enjoy digging into low‑level details (packets, syscalls, logs) and turning them into
+              <strong>simple, actionable decisions</strong> for your team. If you need someone who can both
+              script and explain, we’ll work well together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">How I can help your team</h2>
+        <p class="section-intro">
+          I offer focused, technical missions around Linux, networks, and security. Ideal for startups, small businesses,
+          and technical teams that need an extra pair of hands on critical tasks.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🛡</div>
+            <h3>Linux hardening & security</h3>
+            <p>
+              Secure your Linux servers with best practices and clear documentation.
+            </p>
+            <ul class="service-list">
+              <li>SSH configuration & key‑based access</li>
+              <li>Firewall setup (iptables, nftables, UFW)</li>
+              <li>Service minimization & permissions</li>
+              <li>Log review and basic incident triage</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🖧</div>
+            <h3>Network diagnostics & security</h3>
+            <p>
+              Understand what’s happening on your network and reduce your attack surface.
+            </p>
+            <ul class="service-list">
+              <li>Traffic analysis & troubleshooting</li>
+              <li>Secure remote access (VPN, SSH tunnels)</li>
+              <li>Basic segmentation & access control</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⚙️</div>
+            <h3>Automation & scripting</h3>
+            <p>
+              Automate repetitive tasks and improve reliability with scripts and tools.
+            </p>
+            <ul class="service-list">
+              <li>Bash scripts for sysadmin workflows</li>
+              <li>Python tooling for monitoring & parsing</li>
+              <li>Cron jobs, backups, deployment helpers</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Secure tooling in C/C++</h3>
+            <p>
+              Low‑level tools with a security mindset.
+            </p>
+            <ul class="service-list">
+              <li>Network utilities & socket‑based tools</li>
+              <li>Performance‑oriented system helpers</li>
+              <li>Code review with security focus</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-kicker">Projects</div>
+        <h2 class="section-title">Selected technical work</h2>
+        <p class="section-intro">
+          A few examples of the kind of tools and workflows I build. These can be adapted or extended for your own infrastructure.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-label">Linux · Bash</div>
+            <h3>Linux server hardening toolkit</h3>
+            <p>
+              A collection of Bash scripts to audit and harden Linux servers with repeatable steps and clear logs.
+            </p>
+            <div class="project-meta">
+              Focus: <span>SSH, firewall, services, permissions</span>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Bash</span>
+              <span class="project-tag">Linux</span>
+              <span class="project-tag">Security</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-label">Python · Networks</div>
+            <h3>Network monitoring & anomaly detection</h3>
+            <p>
+              Python‑based scripts to inspect traffic, detect anomalies, and export data for dashboards.
+            </p>
+            <div class="project-meta">
+              Focus: <span>Visibility, alerts, log export</span>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Scapy</span>
+              <span class="project-tag">Monitoring</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-label">C/C++ · Security</div>
+            <h3>Secure socket helper library</h3>
+            <p>
+              Lightweight C/C++ helpers to simplify secure socket usage and reduce common mistakes in network code.
+            </p>
+            <div class="project-meta">
+              Focus: <span>Secure defaults, maintainability</span>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">C/C++</span>
+              <span class="project-tag">Sockets</span>
+              <span class="project-tag">Security</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS (placeholders) -->
+      <section class="section">
+        <div class="section-kicker">Feedback</div>
+        <h2 class="section-title">What clients can expect</h2>
+        <p class="section-intro">
+          These are example quotes you can replace with real feedback from Upwork, Malt, or direct clients once you have them.
+        </p>
+
+        <div class="testimonials">
+          <article class="testimonial-card">
+            <div class="testimonial-quote">
+              “Alex quickly secured our Linux server and automated our backups. Clear communication and detailed documentation.”
+            </div>
+            <div class="testimonial-author">
+              CTO · <span>Small business in France</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-quote">
+              “Great technical skills and very pragmatic. Alex helped us understand our network issues and proposed simple, effective fixes.”
+            </div>
+            <div class="testimonial-author">
+              Founder · <span>European startup</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">Let’s work together</h2>
+        <p class="section-intro">
+          I’m available for freelance missions on platforms like <strong>Upwork</strong> and <strong>Malt</strong>, as well as direct contracts.
+          Tell me about your infrastructure, your constraints, and your goals.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Project details</h3>
+            <p>
+              For a fast and accurate response, include:
+            </p>
+            <ul class="contact-list">
+              <li><strong>Context:</strong> type of infrastructure (servers, network, cloud, etc.)</li>
+              <li><strong>Goals:</strong> what you want to secure or automate</li>
+              <li><strong>Timeline:</strong> when you’d like to start</li>
+              <li><strong>Platform:</strong> Upwork, Malt, or direct collaboration</li>
+            </ul>
+
+            <div class="contact-pill-row">
+              <div class="contact-pill">Linux · Networks · Security</div>
+              <div class="contact-pill">C/C++ · Python · Bash</div>
+              <div class="contact-pill">Remote · France & worldwide</div>
+            </div>
+
+            <div class="contact-cta">
+              <button class="btn-primary">
+                Copy for Upwork / Malt
+              </button>
+              <div class="contact-cta-note">
+                Use this page as your portfolio link and summary.
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-visual">
+            <h3>Contact information</h3>
+            <p>
+              You can adapt this block for your Upwork/Malt profile or personal website.
+            </p>
+            <div class="contact-visual-code">
+              name: Alex<br />
+              role: Cybersecurity & Linux freelance engineer<br />
+              location: France (remote‑friendly)<br />
+              platforms: Upwork, Malt, direct<br />
+              focus: linux, networks, automation, secure tooling<br />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Alex – Cybersecurity & Linux Freelance</span>
+        <span>Portfolio for Upwork · Malt · direct clients</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
